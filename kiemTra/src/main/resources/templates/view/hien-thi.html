@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+</head>
+<body >
+<table >
+    <thead>
+    <th>STT</th>
+    <th>Ten</th>
+    <th>Tuoi</th>
+    <th>Gioi tinh</th>
+    <th colspan="2">Hanh dong</th>
+    </thead>
+    <tbody>
+    <tr th:each="sv, i : ${list}">
+        <td th:text="${i.index+1}"></td>
+        <td th:text="${sv.ten}"></td>
+        <td th:text="${sv.tuoi}"></td>
+        <td th:text="${sv.gioiTinh}==false?Nam:Nu"></td>
+        <td>
+            <a th:href="@{|/sinh-vien/delete/*{sv.id}|}" class="btn btn-danger">Delete</a>
+        </td>
+        <td>
+            <a th:href="@{|/sinh-vien/detail/*{sv.id}|}" class="btn btn-primary">Detail</a>
+        </td>
+
+    </tr>
+    </tbody>
+</table>
+</body>
+<script>
+    // function xoa(id) {
+    //     if (confirm("Are you sure?")) {
+    //      location.href = "/quyen-han/delete/"+id;
+    //     }
+    // }
+    //
+    // function confirmAdd(){
+    //     if (confirm("Are you sure?")) {
+    //         document.getElementById("forms").submit();
+    //     }
+    // }
+</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+</head>
+<body>
+<form th:action="@{|/sinh-vien/update/*{id}|}" method="post" th:object="${sinhVien}">
+    <label>Ten: </label>
+    <input type="text" th:field="*{ten}" class="form-control">
+    <i th:errors="*{ten}" class="text-danger"></i>
+    <br>
+    <label>Tuoi: </label>
+    <input type="number" th:field="*{tuoi}" class="form-control">
+    <i th:errors="*{tuoi}" class="text-danger"></i>
+
+    <br>
+    <label>GioiTinh: </label>
+    <input type="radio" th:field="*{gioiTinh}" name="gioiTinh" value="0"> Nam
+    <input type="radio" th:field="*{gioiTinh}" name="gioiTinh" value="1"> Nu
+    <i th:errors="*{gioiTinh}" class="text-danger"></i>
+
+    <br>
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
+</body>
+</html>
